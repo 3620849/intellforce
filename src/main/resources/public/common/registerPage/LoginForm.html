@@ -1,0 +1,16 @@
+<div  style="z-index: 999 ; position: absolute;left:40vw ;top: 20vh">
+<form name="loginForm" ng-submit="loginUser(user)" method="post" >
+    <div class="form-group">
+        <label for="username">First name</label>
+        <input type="text" class="form-control" id="username" placeholder="Name">
+
+        <label for="password">Password</label>
+        <input type="password" id ="password" class="form-control" placeholder="password" name="password" ng-model="user.password" >
+
+        <a href="#register">Register</a>
+        <br>
+        <a type="submit" href="#survey" class="btn btn-secondary btn-lg btn-block">Login</a>
+    </div>
+</form>
+
+</div>
