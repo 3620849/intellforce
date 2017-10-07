@@ -17,8 +17,11 @@
 <script src="lib/bootstrap-4.0.0-beta/dist/js/bootstrap.min.js"></script>
 <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
 <script src="lib/bootstrap-4.0.0-beta/assets/js/ie10-viewport-bug-workaround.js"></script>
-<script src="common/registerPage/js/LoginFormCtrl.js"
-<script src="common/registerPage/js/RegisterFormCtrl.js"
-<script src="common/survey/js/SurveyFormCtrl.js"
-<script src="common/score/js/ScoreCtrl.js"
+<script src="common/registerPage/js/LoginFormCtrl.js"></script>
+<script src="common/registerPage/js/LoginService.js"></script>
+<script src="common/survey/js/SurveyService.js"></script>
+<script src="common/registerPage/js/RegisterFormCtrl.js"></script>
+<script src="common/survey/js/SurveyFormCtrl.js"></script>
+<script src="common/score/js/ScoreCtrl.js"></script>
+<script src="common/score/js/ScoreService.js"></script>
 </html>

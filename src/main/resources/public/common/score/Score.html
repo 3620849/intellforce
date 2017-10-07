@@ -15,12 +15,9 @@
         Total score
     </div>
     <div class="card-body">
-        <h4 class="card-title">Special title treatment</h4>
-        <p class="card-text">Q1 :</p>
-        <p class="card-text">Q2 :</p>
-        <p class="card-text">Q3 :</p>
-        <p class="card-text">Q4 :</p>
-        <p class="card-text">Q5 :</p>
+        <h4 class="card-title">User name : {{score.username}}</h4>
+        <p class="card-text" ng-repeat="(key, value) in score" ng-if="!$first">{{key}} : {{value}}</p>
+
         <a href="#/" class="btn btn-secondary">Try agin</a>
     </div>
     <div class="card-footer text-muted">

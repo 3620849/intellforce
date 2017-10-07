@@ -1,5 +1,11 @@
-angular.module("mainApp").controller("LoginFormCtrl",function($scope,loginService){
+angular.module("mainApp").controller('LoginFormCtrl',function($scope,$rootScope,$location,loginService){
     $scope.loginUser = function(user){
-        loginService.login(user);
+        $rootScope.user.username =  user.username;
+        $rootScope.user.logindata = user.username+":"+user.password
+        $location.path('/survey');
     }
-})
+    $scope.getRegisterForm = function(){
+
+        $location.path('/register');
+    }
+});

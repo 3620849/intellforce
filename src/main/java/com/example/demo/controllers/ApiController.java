@@ -37,9 +37,9 @@ public class ApiController {
         }
         return true;
     }
-    @PreAuthorize("hasRole('ROLE_ADMIN') or principal.id == #id")
-    @RequestMapping(value = "/getUserInfo/{id}", method = RequestMethod.GET)
-    public ResponseEntity<UserStatistic> getUserInfo (@PathVariable("id") int id){
-        return new ResponseEntity<>(userService.getUserInfo(id), HttpStatus.OK);
+    @PreAuthorize("hasRole('ROLE_ADMIN') or principal.username == #username")
+    @RequestMapping(value = "/getUserInfo/{username}", method = RequestMethod.GET)
+    public ResponseEntity<UserStatistic> getUserInfo (@PathVariable("username") String username){
+        return new ResponseEntity<>(userService.getUserInfo(username), HttpStatus.OK);
     }
 }

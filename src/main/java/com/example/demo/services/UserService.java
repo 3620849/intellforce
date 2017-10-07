@@ -40,7 +40,8 @@ public class UserService implements UserDetailsService {
         userDao.setAnswer( user,  answer);
     }
 
-    public UserStatistic getUserInfo(int id) {
+    public UserStatistic getUserInfo(String username) {
+        int id = userDao.getUserByUsername(username).getId();
         UserStatistic userStatistic = new UserStatistic();
         userStatistic.setUsername(userDao.find(id).getUsername());
         userStatistic.setQuestion1(isRight(1,id));

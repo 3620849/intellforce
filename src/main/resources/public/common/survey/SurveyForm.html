@@ -1,22 +1,29 @@
 <style>
     .center {
-        top: 50%;
+        top: 40%;
         left: 50%;
         width: 450px;
-        height: 450px;
         position: absolute;
         margin-top: -225px;
         margin-left: -225px;
     }
+    .imgsize {
+        width: 450px;
+        height: 200px;
+    }
 </style>
 
 <div class="card mb-3 center">
-    <img class="card-img-top" src="..." alt="Card image cap">
+    <img class="card-img-top imgsize" src="{{questionQ.image_path}}" alt="Card image cap">
     <div class="card-body">
-        <h4 class="card-title">Card title</h4>
-        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+        <h4 class="card-title">Question {{questionQ.id}} of 5</h4>
+        <p class="card-text">{{questionQ.question}}</p>
+        <div class="form-check form-check" ng-repeat="answer in questionQ.answers">
+            <label class="form-check-label">
+                <input class="form-check-input" type="radio" ng-model="$parent.answer.answerId" name="radio1" value="{{$index+1}}"> {{answer}}
+            </label>
+        </div>
     </div>
-    <a type="submit" href="#score" class="btn btn-secondary btn-lg btn-block">NEXT</a>
-    <a type="submit" href="#survey" class="btn btn-secondary btn-lg btn-block">BACK</a>
+    <button  ng-click="next()" class="btn btn-secondary btn-lg btn-block">NEXT</button>
+    <button ng-click="back()" class="btn btn-secondary btn-lg btn-block">BACK</button>
 </div>

@@ -1,25 +1,13 @@
-/**
- * Created by UA C on 20.08.2017.
- */
 angular.module('mainApp').factory('loginService',function($http,$rootScope){
 
     var fact ={
-        user:{
-            token : -1
-        },
-        login: function (user) {
-            $http.post("/getToken", user)
-                .then(function (data, status, headers, config) {
-                    //fact.user.token = data.data;
-                    $rootScope.user.token = data.data;
-                    $rootScope.$broadcast('userLogin:updated');
 
-                }, function (error) {
-                    console.log(error.data)
-                })
+        login: function (user) {
+                    $rootScope.user.logindata = user;
+                    $rootScope.$broadcast('userLogin:updated');
         },
         register: function (user) {
-            $http.post("/register", user)
+            $http.post("/register/addUser", user)
                 .then(function (data, status, headers, config) {
                 }, function (error) {
                     console.log(error.data)

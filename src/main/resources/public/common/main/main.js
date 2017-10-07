@@ -4,11 +4,11 @@ app.controller("AppCtrl", function ($scope, $rootScope) {
 });
 app.config(function ($routeProvider) {
     $routeProvider
-        .when('/', {
+        .when('/survey', {
             templateUrl: 'common/survey/SurveyForm.html',
             controller: 'SurveyFormCtrl'
         })
-        .when('/login', {
+        .when('/', {
             templateUrl: 'common/registerPage/LoginForm.html',
             controller: 'LoginFormCtrl'
         })
@@ -20,5 +20,16 @@ app.config(function ($routeProvider) {
             templateUrl: 'common/score/Score.html',
             controller: 'ScoreCtrl'
         })
-        .otherwise({ redirectTo: '/login' });
+        .when('/accessDenied', {
+            templateUrl: 'common/main/accessDeniedPage.html'
+        })
+        .otherwise({ redirectTo: '/' });
 });
+    /*.run(['$rootScope', '$location', '$http',
+    function ($rootScope, $location) {
+        $rootScope.$on('$locationChangeStart', function (event, next, current) {
+
+                $location.path('/login');
+
+        });
+    }]);*/
